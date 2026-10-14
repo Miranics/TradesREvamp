@@ -22,7 +22,6 @@ The bot waits for the bar after the break to close before it places anything. `r
 
 | Input | Default | Meaning |
 |---|---|---|
-| DemoOnly | true | Refuses to run on a real account. Set it to false only after the demo and tester checks below |
 | MagicNumber | 260514 | Identifies the bot's positions |
 | ServerUTCOffsetHours | 0 | Server time minus UTC. Exness MT5 servers run on UTC, so 0. Check it in Market Watch: server time should equal UTC |
 | SeedLots | 0.01 | Lot size below AddStartBalance |
@@ -51,10 +50,18 @@ The bot reads 5-minute and 1-minute bars itself, so the chart timeframe does not
 
 The setups (days, direction, entry, stop) should match the reference list almost one for one. Profits will differ slightly, because the tester uses the real spread on every tick and fills at market.
 
-## Then on demo, then live
+## Going live
 
-1. Run it on an Exness demo account for at least 2–4 weeks with `DemoOnly = true`, and compare its trades with the reference rules.
-2. Only then set `DemoOnly = false` on a $50 real account.
-3. The bot has to stay running from 07:00 to 21:00 UTC. A phone cannot run it. Use a computer that stays on, a MetaQuotes VPS (about $15 a month, rented inside MT5), or the free Exness VPS once your balance qualifies.
+The bot runs on any account, demo or real. The live forward test is the first 20 trades on a $50 real account (see `docs/RULES_v2.md`).
+
+The bot only trades while an MT5 terminal with it attached is running, from 07:00 to 21:00 UTC (09:00–23:00 Kigali), every weekday. The MT5 phone app cannot run Expert Advisors. It does not need your own computer: a cloud server does the job.
+
+| Option | Cost | Notes |
+|---|---|---|
+| MetaQuotes virtual hosting | $15 a month (less if rented for longer) | Rented inside desktop MT5 (right-click the account → Register a Virtual Server). One click copies the chart and bot to the server; it then runs 24/7 with your computer off. Watch trades from the phone app |
+| Exness VPS | free above a balance and volume threshold | Requested from the Exness Personal Area once the account qualifies |
+| Any Windows cloud server | from about $5 a month | Install MT5 on it, attach the bot, and leave it running |
+
+With MetaQuotes hosting, desktop MT5 is needed only once, to attach the bot and start the migration. On Linux, MetaQuotes' installer runs MT5 through Wine.
 
 If the bot restarts during the day, it rebuilds the day's setup from the chart and keeps managing open positions. If price reached the entry while it was offline, it skips the day instead of chasing.

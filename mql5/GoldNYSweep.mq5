@@ -27,8 +27,7 @@
 
 #include <Trade/Trade.mqh>
 
-input group "Safety"
-input bool   DemoOnly             = true;    // Trade demo accounts only
+input group "General"
 input long   MagicNumber          = 260514;  // Magic number
 
 input group "Time"
@@ -415,11 +414,6 @@ bool MissedWhileOffline()
 int OnInit()
 {
    bool tester = (MQLInfoInteger(MQL_TESTER) != 0);
-   if(DemoOnly && !tester && AccountInfoInteger(ACCOUNT_TRADE_MODE) != ACCOUNT_TRADE_MODE_DEMO)
-   {
-      Alert("GoldNYSweep: DemoOnly is on and this is not a demo account. Set DemoOnly = false to trade it.");
-      return INIT_FAILED;
-   }
    if(_Period != PERIOD_M5)
       Print("GoldNYSweep works on 5-minute bars internally; any chart timeframe is fine.");
    string parts[];

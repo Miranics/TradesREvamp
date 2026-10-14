@@ -15,7 +15,7 @@ TradesREvamp/
 │   └── results_realtime.md         # entry timing a bot can follow
 ├── mql5/
 │   ├── GoldNYSweep.mq5             # the Expert Advisor
-│   └── README.md                   # install, Strategy Tester check, demo, VPS
+│   └── README.md                   # install, Strategy Tester check, running it on a VPS
 ├── results/
 │   ├── bakeoff_trades.csv          # every simulated trade from the bake-off
 │   ├── pyramiding_trades.csv       # every trade under the 7 add rules
