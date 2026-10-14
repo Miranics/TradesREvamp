@@ -11,19 +11,24 @@ TradesREvamp/
 │   ├── RULES_v2.md                 # the trading plan: entries, sizing, adds, budget
 │   ├── sweep_model.md              # exact rules of the strategy being tested
 │   ├── results_bakeoff.md          # 2024–2026 comparison results
-│   └── results_pyramiding.md       # add rules and account-growth results
+│   ├── results_pyramiding.md       # add rules and account-growth results
+│   └── results_realtime.md         # entry timing a bot can follow
+├── mql5/
+│   ├── GoldNYSweep.mq5             # the Expert Advisor
+│   └── README.md                   # install, Strategy Tester check, demo, VPS
 ├── results/
 │   ├── bakeoff_trades.csv          # every simulated trade from the bake-off
 │   ├── pyramiding_trades.csv       # every trade under the 7 add rules
-│   └── phase_sizing_output.txt     # output of 04_phase_sizing.py
+│   ├── phase_sizing_output.txt     # output of 04_phase_sizing.py
+│   └── reference_trades.csv        # the trades the EA should reproduce
 └── research/
     ├── 01_trade_review.ipynb       # review of 2026 Exness trades + first backtests (with saved outputs)
     ├── 02_strategy_bakeoff.ipynb   # 2024–2026 comparison of candidate strategies (with saved outputs)
     ├── 03_pyramiding.ipynb         # how aggressively to add to winners (with saved outputs)
-    └── 04_phase_sizing.py          # which add rule to use below and above $250
+    ├── 04_phase_sizing.py          # which add rule to use below and above $250
+    ├── 05_realtime_check.ipynb     # entry timing a bot can follow + reference trades (with saved outputs)
+    └── 06_compare_tester.py        # compares MT5 Strategy Tester trades with the reference trades
 ```
-
-An `mql5/` folder with the Expert Advisor will be added once a strategy passes the bake-off.
 
 ## Running the notebooks
 
@@ -41,3 +46,4 @@ An `mql5/` folder with the Expert Advisor will be added once a strategy passes t
 | Does it hold out-of-sample (Exness data 2024–2025)? | Yes. Positive in 2024, 2025 and 2026, for buys and sells, and beats random direction (p = 0.005 with adds). Weaker before 2026: +0.12R and +0.56R per trade with adds. See `docs/results_bakeoff.md`. |
 | Do other published intraday strategies work on gold? | No. Intraday momentum and opening-range breakout failed all checks after costs. |
 | How hard should winners be pressed? | Per trade, more adds earn more R (adds to +4R: +0.55R; growing adds: +0.76R). But with the stop moved to entry, a reversal after two adds loses about 3R, which ends a $50 account. Best plan: no adds below $250, then adds every 1R up to +4R at 10% risk. See `docs/results_pyramiding.md`. |
+| Does it work with entry timing a bot can follow? | Yes. Placing the order once the bar after the break closes gives +0.54R per trade with adds (207 trades, every year positive, p = 0.012). Placing it one bar earlier loses the edge. See `docs/results_realtime.md`. |

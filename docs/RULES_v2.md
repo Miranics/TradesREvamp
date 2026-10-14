@@ -4,7 +4,7 @@ Editable copy: Google Drive, `My Trades/Trading Rules v2 — Gold NY Sweep Model
 
 ## The model in one paragraph
 
-One gold trade per day: New York sweeps the London high or low, a 5-minute candle breaks structure decisively the other way, and you enter on the fair value gap. The stop sits beyond the sweep and everything closes at 23:00 Kigali. Below $250 the trade is a single 0.01-lot position; from $250 you add at +1R, +2R, +3R and +4R with 10% of the balance at risk per position. On Exness gold data from January 2024 to October 2026 (214 trades), the model was profitable in every year, for buys and sells, and beat random direction. The budget is $150 a month, in three $50 attempts.
+One gold trade per day: New York sweeps the London high or low, a 5-minute candle breaks structure decisively the other way, and you enter on the fair value gap. The stop sits beyond the sweep and everything closes at 23:00 Kigali. Below $250 the trade is a single 0.01-lot position; from $250 you add at +1R, +2R, +3R and +4R with 10% of the balance at risk per position. On Exness gold data from January 2024 to October 2026 (207 trades, with the order placed only once the setup is complete), the model was profitable in every year, for buys and sells, and beat random direction. The budget is $150 a month, in three $50 attempts.
 
 ## Monthly budget
 
@@ -18,7 +18,7 @@ One gold trade per day: New York sweeps the London high or low, a 5-minute candl
 1. **Before 15:00:** mark the London high and low (09:00–14:00). Write your bias in the journal.
 2. **15:00–19:00, the sweep:** price trades beyond the London high or low. Only the first sweep counts.
 3. **The break, 5-minute chart only:** within 30 candles of the sweep, a candle closes beyond the last swing point before the sweep, with a body at least 1.5× the median of the previous 20.
-4. **Entry:** limit order at the near edge of the fair value gap. Swept the high → sell. Swept the low → buy.
+4. **Entry:** wait for the 5-minute candle *after* the break to close. Then place a limit order at the near edge of the most recent fair value gap. Swept the high → sell. Swept the low → buy. If price touched the stop during that candle, there is no trade.
 5. **Cancel** if price reaches the stop before filling, or if unfilled by 22:00.
 6. **No setup by 19:00:** no trade today.
 
@@ -49,6 +49,6 @@ Skip the setup if one position's risk in dollars is larger than the balance.
 
 ## Forward test
 
-The first 20 trades are the test. Compare the average R with the backtest (+0.19R without adds, +0.55R with adds). Stop and review if three rules are broken or the first 10 trades average below −0.5R.
+The first 20 trades are the test. Compare the average R with the backtest (+0.16R without adds, +0.54R with adds). Stop and review if three rules are broken or the first 10 trades average below −0.5R.
 
-Evidence: `docs/results_bakeoff.md`, `docs/results_pyramiding.md`.
+Evidence: `docs/results_bakeoff.md`, `docs/results_pyramiding.md`, `docs/results_realtime.md`. The Expert Advisor in `mql5/` follows these rules.

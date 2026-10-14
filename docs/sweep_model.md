@@ -1,6 +1,6 @@
-# Sweep model (v1 specification)
+# Sweep model (v1.1 specification)
 
-One gold (XAUUSD) trade per day during the New York session. This is the exact rule set tested in `research/01_trade_review.ipynb` and `research/02_strategy_bakeoff.ipynb`, and the one the Expert Advisor will implement.
+One gold (XAUUSD) trade per day during the New York session. This is the rule set tested in `research/01_trade_review.ipynb` and `research/02_strategy_bakeoff.ipynb`, with the entry timing corrected in `research/05_realtime_check.ipynb`. `mql5/GoldNYSweep.mq5` implements it.
 
 Times are UTC, with Kigali time (UTC+2) in brackets.
 
@@ -11,7 +11,7 @@ Times are UTC, with Kigali time (UTC+2) in brackets.
 | 1. London range | High and low of 07:00–12:00 (09:00–14:00) |
 | 2. Sweep | Between 13:00 and 17:00 (15:00–19:00), a 5-minute bar trades beyond the London high (look for sells) or low (look for buys). Only the first sweep counts. |
 | 3. Break | Within 30 five-minute bars, a bar **closes** beyond the most recent swing point before the sweep, with a body at least 1.5× the median of the previous 20 bodies |
-| 4. Entry | Limit order at the near edge of the fair value gap left by the break |
+| 4. Entry | When the 5-minute bar after the break closes, take the most recent fair value gap (up to and including that bar). Enter at its near edge. If that bar touched the stop, no trade |
 | 5. Cancel | If price reaches the stop before filling, or the order is not filled by 20:00 (22:00) |
 | 6. Stop | $0.50 beyond the sweep's extreme |
 | 7. Adds | Below $250: none. From $250: at +1R, +2R, +3R and +4R, add a position of the same size and move the stop on all positions to the first entry. A reversal after n adds loses 1+2+…+n R on the adds. |
