@@ -14,7 +14,7 @@ Times are UTC, with Kigali time (UTC+2) in brackets.
 | 4. Entry | Limit order at the near edge of the fair value gap left by the break |
 | 5. Cancel | If price reaches the stop before filling, or the order is not filled by 20:00 (22:00) |
 | 6. Stop | $0.50 beyond the sweep's extreme |
-| 7. Adds (optional) | At +1R and +2R, add a position of the same size and move the stop on all positions to the first entry |
+| 7. Adds | Below $250: none. From $250: at +1R, +2R, +3R and +4R, add a position of the same size and move the stop on all positions to the first entry. A reversal after n adds loses 1+2+…+n R on the adds. |
 | 8. Exit | Close everything at 21:00 (23:00). No take-profit. |
 | 9. Limit | One trade per day |
 

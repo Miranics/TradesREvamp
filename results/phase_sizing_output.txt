@@ -1,0 +1,21 @@
+           below $250             from $250 risk from $250  reach_$250_%  reach_$1000_%  bust_%
+              no adds           adds to +4R            10%          60.3           53.8    40.3
+              no adds          adds +1R,+2R            10%          58.6           51.0    42.2
+              no adds               no adds            20%          60.6           50.6    40.8
+              no adds               no adds            10%          58.9           50.1    41.6
+              no adds          growing adds            10%          58.2           48.2    46.1
+              no adds           adds to +4R            20%          59.4           48.2    42.8
+              no adds          adds +1R,+2R            20%          58.8           48.1    43.6
+              no adds adds to +4R, trailing            10%          60.0           46.2    40.9
+              no adds adds to +4R, trailing            20%          59.4           42.8    42.7
+              no adds          growing adds            20%          60.0           39.8    54.3
+adds to +4R, trailing          adds +1R,+2R            10%          43.2           38.5    59.2
+adds to +4R, trailing               no adds            10%          42.4           37.8    59.0
+adds to +4R, trailing           adds to +4R            10%          42.2           37.7    59.9
+adds to +4R, trailing               no adds            20%          42.4           36.4    60.8
+adds to +4R, trailing adds to +4R, trailing            10%          42.4           35.3    59.9
+adds to +4R, trailing           adds to +4R            20%          42.9           34.8    63.0
+adds to +4R, trailing          growing adds            10%          42.4           34.8    63.6
+adds to +4R, trailing          adds +1R,+2R            20%          41.1           33.3    64.0
+adds to +4R, trailing adds to +4R, trailing            20%          42.5           31.7    63.0
+adds to +4R, trailing          growing adds            20%          42.3           28.2    70.6
