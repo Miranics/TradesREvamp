@@ -8,8 +8,10 @@ Research and automation for an intraday gold (XAUUSD) strategy traded on Exness 
 TradesREvamp/
 ├── README.md
 ├── docs/
+│   ├── RULES_v2.md                 # the trading plan: entries, sizing, adds, budget
 │   ├── sweep_model.md              # exact rules of the strategy being tested
-│   └── results_bakeoff.md          # 2024–2026 comparison results
+│   ├── results_bakeoff.md          # 2024–2026 comparison results
+│   └── results_pyramiding.md       # add rules and account-growth results
 ├── results/
 │   ├── bakeoff_trades.csv          # every simulated trade from the bake-off
 │   ├── pyramiding_trades.csv       # every trade under the 7 add rules
