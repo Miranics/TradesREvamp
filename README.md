@@ -10,9 +10,11 @@ TradesREvamp/
 ├── docs/
 │   ├── sweep_model.md              # exact rules of the strategy being tested
 │   └── results_bakeoff.md          # 2024–2026 comparison results
+├── results/
+│   └── bakeoff_trades.csv          # every simulated trade from the bake-off
 └── research/
     ├── 01_trade_review.ipynb       # review of 2026 Exness trades + first backtests (with saved outputs)
-    └── 02_strategy_bakeoff.ipynb   # 2024–2026 comparison of candidate strategies
+    └── 02_strategy_bakeoff.ipynb   # 2024–2026 comparison of candidate strategies (with saved outputs)
 ```
 
 An `mql5/` folder with the Expert Advisor will be added once a strategy passes the bake-off.
