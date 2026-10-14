@@ -14,7 +14,8 @@ TradesREvamp/
 │   └── bakeoff_trades.csv          # every simulated trade from the bake-off
 └── research/
     ├── 01_trade_review.ipynb       # review of 2026 Exness trades + first backtests (with saved outputs)
-    └── 02_strategy_bakeoff.ipynb   # 2024–2026 comparison of candidate strategies (with saved outputs)
+    ├── 02_strategy_bakeoff.ipynb   # 2024–2026 comparison of candidate strategies (with saved outputs)
+    └── 03_pyramiding.ipynb         # how aggressively to add to winners, and what it does to a $50 account
 ```
 
 An `mql5/` folder with the Expert Advisor will be added once a strategy passes the bake-off.
