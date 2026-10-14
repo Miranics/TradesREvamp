@@ -20,7 +20,7 @@ An `mql5/` folder with the Expert Advisor will be added once a strategy passes t
 
 1. Open the notebook in Google Colab (the badge at the top of each notebook, or from Google Drive).
 2. Run all cells. `02_strategy_bakeoff.ipynb` mounts Google Drive and stores downloaded price data in `My Trades/data`, so it only downloads once.
-3. Price data is free 1-minute data from Dukascopy via [`dukascopy-node`](https://github.com/Leo4815162342/dukascopy-node). If a month fails with error 429 (rate limit), wait a few minutes and re-run the download cell.
+3. `02_strategy_bakeoff.ipynb` uses Exness's free tick archive (`ticks.ex2archive.com`, symbol XAUUSDm), converted to 1-minute candles with the real spread. `01_trade_review.ipynb` used Dukascopy data via `dukascopy-node`.
 
 ## Findings so far
 
